@@ -6,6 +6,6 @@ solveing the problem (https://cybertalents.com/challenges/cryptography/genfei) o
 #### prerequistes:
 * Create an account on (https://cybertalents.com/)
 * download and setup some python version as **python2** or **python3** from (https://www.python.org/downloads/)
-* you may use some editor as **Anaconda** or **Pycharm** .....
+* you may use some editor as **Anaconda** or **Pycharm** ..... you can aid with this link (https://www.youtube.com/watch?v=5mDYijMfSzs&t=299s)
 
 
