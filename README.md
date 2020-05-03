@@ -17,7 +17,7 @@ with the source code
 ### for Beginners,How to solve the challenge step by step?
 1. unzip the downloaded file from the challenge 
 2. write your own code to decrypt the encrypted code in **flag.enc** 
-   * ##### Encrypt.dy
+   * Given Encryption code:
 ```
 import sys
 from struct import pack, unpack
