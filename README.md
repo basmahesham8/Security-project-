@@ -18,7 +18,8 @@ with the source code
 1. unzip the downloaded file from the challenge 
 2. write your own code to decrypt the encrypted code in **flag.enc** 
 ##### Encrypt.dy
-> import sys
+```
+import sys
 from struct import pack, unpack
 
 def F(w):
@@ -36,4 +37,4 @@ while len(pt) % 16: pt += "#"
 
 ct = "".join(encrypt(pt[i:i+16]) for i in xrange(0, len(pt), 16))
 open(sys.argv[1] + ".enc", "w").write(ct)
-
+```
