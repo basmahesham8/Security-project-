@@ -16,7 +16,7 @@ with the source code
 
 ### for Beginners,How to solve the challenge step by step?
 1. unzip the downloaded file from the challenge 
-2. write your own code to decrypt the encrypted code in **flag.enc** 
+
    * Given Encryption code:
 ```
 import sys
@@ -38,3 +38,25 @@ while len(pt) % 16: pt += "#"
 ct = "".join(encrypt(pt[i:i+16]) for i in xrange(0, len(pt), 16))
 open(sys.argv[1] + ".enc", "w").write(ct)
 ```
+2. write your own code to decrypt the encrypted code in **flag.enc** and then run it 
+   * Decryption function:
+   ```
+    def decrypt(block):
+    a, b, c, d = unpack("<4I", block)
+    for i in xrange(32):
+        # decrypting the second step in encrypt
+        tempa = a
+        d = d ^ 1337
+        a = c ^ (F(d | F(d) ^ d))
+        b = b ^ (F(d ^ F(a) ^ (d | a)))
+        c = tempa ^ (F(d | F(b ^ F(a)) ^ F(d | b) ^ a))
+        # decrypting the frist step in encrypt
+        tempa = a
+        a = d ^ 31337
+        d = c ^ (F(a | F(a) ^ a))
+        c = b ^ (F(a ^ F(d) ^ (a | d)))
+        b = tempa ^ (F(a | F(c ^ F(d)) ^ F(a | c) ^ d))
+    return pack("<4I", a, b, c, d)
+    ```
+3. take the decrypted result and submit it in the online challenge
+
